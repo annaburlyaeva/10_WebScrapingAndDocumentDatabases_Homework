@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:italic|Play:700,regular|PT+Sans:700|Roboto:700&amp;subset=cyrillic-ext,cyrillic" media="all" />
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+  
+    <!-- Scraping results -->
+    <div class="row"> 
+        <div class="col">
+            <div class="container">
+                  <div class="row">
+                      <div class="col">
+                        <div class="row">
+                          <h2>Latest Mars News</h2>
+                        </div>
+                        <div class="row">
+                            <h3 class="mt-0">{{results_dict.latest_news.title}}</h3>
+                            <p style="font-size: 15px;"> 
+                              {{results_dict.latest_news.paragraph}}   
+                            </p>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+          <div class="container" style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px">
+              <div class="row">
+                  <div class="col">                      
+                      <div class="row" style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;  margin-top: 5px; margin-left: 5px; margin-right: 15px; margin-bottom: 5px">
+                        <h2>Featured Mars Image</h2> 
+                        <img src={{results_dict.featured_mars_image}}  height=100% width=100% alt="Featured Mars Image">                      
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="row" style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;  margin-top: 5px; margin-right: 5px">                        
+                        <h2>Current Weather on Mars</h2>                              
+                        <p style="font-size: 12px;">{{results_dict.mars_weather}}</p>                            
+                      </div>
+                       
+                      <div class="row" style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px; margin-top: 12px; margin-right: 5px; margin-bottom: 5px">                        
+                        <h2>Mars Facts</h2>
+                        <!-- <div>{{results_dict.mars_facts}}</div> -->                           
+                        <table class="table table-bordered table-hover table-condensed" style="font-size: 12px"> 
+                          <thead> <tr style="text-align: right;"> 
+                              </tr> </thead> <tbody> <tr> 
+                              <td>Equatorial Diameter:</td> 
+                              <td>6,792 km</td> </tr> 
+                              <tr> <td>Polar Diameter:</td> 
+                              <td>6,752 km</td> </tr> <tr> 
+                              <td>Mass:</td> 
+                              <td>6.42 x 10^23 kg (10.7% Earth)</td> </tr> 
+                              <tr> <td>Moons:</td> 
+                              <td>2 (Phobos &amp; Deimos)</td> </tr> 
+                              <tr> <td>Orbit Distance:</td> 
+                              <td>227,943,824 km (1.52 AU)</td> </tr> 
+                              <tr> <td>Orbit Period:</td> 
+                              <td>687 days (1.9 years)</td> 
+                              </tr> <tr> <td>Surface Temperature:</td> 
+                              <td>-153 to 20 °C</td> </tr> 
+                              <tr> <td>First Record:</td> 
+                              <td>2nd millennium BC</td> </tr> 
+                              <tr> <td>Recorded By:</td> 
+                              <td>Egyptian astronomers</td> </tr> 
+                              </tbody> </table>                                                 
+                      </div>
+                  </div>          
+              </div>         
+          </div>
+        </div>
+    </div>
+  
+  <div class="row" style="margin-top: 10px; margin-bottom: 10px">   
+  <div class="col">      
+      <div class="container" style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;">
+          <div class="row">
+          <h2 style="margin-left: 14px;">Mars Hemispheres</h2>
+          </div>
+          <div class="row">              
+              <div class="col">
+                  <div class="row">
+                      <div class="col">                          
+                        <img src={{results_dict.mars_hemispheres[0].img_url}} height=90% width=90% style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;" alt="Cerberus Hemisphere">
+                      </div>
+                      <div class="col">                          
+                        <img src={{results_dict.mars_hemispheres[1].img_url}} height=90% width=90% style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;" alt="Schiaparelli Hemisphere">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col">                          
+                        <img src={{results_dict.mars_hemispheres[2].img_url}} height=90% width=90% style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;" alt="Syrtis Major Hemisphere">
+                      </div>
+                      <div class="col">                          
+                        <img src={{results_dict.mars_hemispheres[3].img_url}} height=90% width=90% style="border:0.5px solid rgba(189, 192, 192, 0.938); border-radius: 3px;" alt="Valles Marineris Hemisphere">
+                      </div>
+                  </div>
+              </div>          
+          </div>         
+      </div>
+  </div>
+  </div>
+
+</div>
+
+</body>
+
+</html>
+

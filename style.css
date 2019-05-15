@@ -1,0 +1,45 @@
+/* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
+body {
+  background: #f1f1f1;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+
+.container {
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+
+.col {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+
+.img.adaptive-image {
+  max-width:100%;
+}
+
+@media (max-width: 480px) {
+      .col{
+        width: 550px;
+        height: 800px;
+      } 
+}
+
+
+
